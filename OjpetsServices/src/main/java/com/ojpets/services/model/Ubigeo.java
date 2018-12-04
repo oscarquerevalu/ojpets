@@ -16,7 +16,7 @@ public class Ubigeo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idubigeo;
+	private long idubigeo;
 
 	private String departamento;
 
@@ -46,14 +46,17 @@ public class Ubigeo implements Serializable {
 	}
 
 
-
-	public int getIdubigeo() {
-		return this.idubigeo;
+	public long getIdubigeo() {
+		return idubigeo;
 	}
 
-	public void setIdubigeo(int idubigeo) {
+
+
+	public void setIdubigeo(long idubigeo) {
 		this.idubigeo = idubigeo;
 	}
+
+
 
 	public String getDepartamento() {
 		return this.departamento;

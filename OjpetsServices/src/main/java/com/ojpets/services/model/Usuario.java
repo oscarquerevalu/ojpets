@@ -15,7 +15,7 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idusuario;
+	private long idusuario;
 
 	private String apematerno;
 
@@ -30,6 +30,8 @@ public class Usuario implements Serializable {
 	private String sexo;
 	
 	private String usuario;
+	
+	private String numero;
 
 	//bi-directional many-to-one association to Mascota
 	@ManyToOne
@@ -72,11 +74,11 @@ public class Usuario implements Serializable {
 		this.usuario = usuario;
 	}
 
-	public Long getIdusuario() {
+	public long getIdusuario() {
 		return idusuario;
 	}
 
-	public void setIdusuario(Long idusuario) {
+	public void setIdusuario(long idusuario) {
 		this.idusuario = idusuario;
 	}
 
@@ -153,5 +155,15 @@ public class Usuario implements Serializable {
 	public void setUbigeo(Ubigeo ubigeo) {
 		this.ubigeo = ubigeo;
 	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	
+	
 
 }

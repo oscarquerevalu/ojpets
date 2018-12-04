@@ -16,7 +16,7 @@ public class Mascota implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idmascota;
+	private long idmascota;
 
 	private String genero;
 
@@ -25,6 +25,12 @@ public class Mascota implements Serializable {
 	private String raza;
 
 	private String tipo;
+	
+	private String detalles;
+	
+	@Lob
+	@Column(name="CONTENT", length=512)
+	private String imagen;
 
 	//bi-directional many-to-one association to Usuario
 	@OneToMany(mappedBy="mascota")
@@ -33,21 +39,25 @@ public class Mascota implements Serializable {
 	public Mascota() {
 	}
 	
-	public Mascota(String genero, String lugar, String raza, String tipo) {
+
+	public Mascota(String genero, String lugar, String raza, String tipo, String detalles, String imagen) {
 		super();
 		this.genero = genero;
 		this.lugar = lugar;
 		this.raza = raza;
 		this.tipo = tipo;
+		this.detalles = detalles;
+		this.imagen = imagen;
 	}
 
 
 
-	public int getIdmascota() {
-		return this.idmascota;
+
+	public long getIdmascota() {
+		return idmascota;
 	}
 
-	public void setIdmascota(int idmascota) {
+	public void setIdmascota(long idmascota) {
 		this.idmascota = idmascota;
 	}
 
@@ -105,4 +115,22 @@ public class Mascota implements Serializable {
 		return usuario;
 	}
 
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	public String getDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(String detalles) {
+		this.detalles = detalles;
+	}
+	
+	
+	
 }

@@ -17,7 +17,7 @@ public class Mapa implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idmapa;
+	private long idmapa;
 
 	private BigDecimal latitud;
 
@@ -32,13 +32,15 @@ public class Mapa implements Serializable {
 	public Mapa() {
 	}
 
-	public int getIdmapa() {
-		return this.idmapa;
+	public long getIdmapa() {
+		return idmapa;
 	}
 
-	public void setIdmapa(int idmapa) {
+
+	public void setIdmapa(long idmapa) {
 		this.idmapa = idmapa;
 	}
+
 
 	public BigDecimal getLatitud() {
 		return this.latitud;
